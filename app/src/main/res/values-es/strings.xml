@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">All Qr Lector</string>
+    <string name="codestring">Código</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+    <string name="qrcodestring">Código Qr</string>
+    <string name="select">Elige el tipo de código que quieres escanear</string>
+    <string name="first_fragment_label">Primer Fragmento</string>
+    <string name="second_fragment_label">Segundo Fragmento</string>
+    <string name="action_settings">Acerca de</string>
+    <string name="matrixcodestring">Código Matrix</string>
+    <string name="code128string">Código 128</string>
+    <string name="code93string">Código 93</string>
+    <string name="code39string">Código 39</string>
+    <string name="codeitfstring">Código ITF</string>
+    <string name="codeean13">Código EAN 13</string>
+    <string name="codeupcastring">Código UPC A</string>
+    <string name="codeean8string">Código EAN 8</string>
+    <string name="codeupcestring">Código UPC E</string>
+    <string name="codepdf417string">Código PDF 417</string>
+    <string name="coderssexpstring">Código RSS EXP</string>
+    <string name="coderss14string">Código RSS 14</string>
+    <string name="copystring">se a copiado al portapapeles</string>
+    <string name="createby">Creado por: Miguel Armas</string>
+</resources>

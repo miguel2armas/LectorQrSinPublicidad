@@ -25,4 +25,8 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/about_Dialog"
+        android:name="com.miguel.armas.developer.lectorqrsinpublicidad.About_Dialog"
+        android:label="About_Dialog" />
 </navigation>

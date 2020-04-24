@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -52,7 +53,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:textSize="12dp"
-            android:text="Elije el tipo de codigo que quieres escanear"/>
+            android:text="@string/select"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,7 +82,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Qr Code"
+                    android:text="@string/qrcodestring"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
                     android:enabled="false"
@@ -111,7 +112,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Matrix Code"
+                    android:text="@string/matrixcodestring"
                     android:enabled="false"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
@@ -148,7 +149,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code 128"
+                    android:text="@string/code128string"
                     android:enabled="false"
                     android:focusable="false"
                     android:paddingStart="5dp"
@@ -178,7 +179,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code 93"
+                    android:text="@string/code93string"
                     android:enabled="false"
                     android:textStyle="bold"
                     android:focusable="false"
@@ -215,7 +216,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code 39"
+                    android:text="@string/code39string"
                     android:enabled="false"
                     android:focusable="false"
                     android:paddingStart="5dp"
@@ -245,7 +246,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code ITF"
+                    android:text="@string/codeitfstring"
                     android:enabled="false"
                     android:textStyle="bold"
                     android:focusable="false"
@@ -282,7 +283,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code EAN 13"
+                    android:text="@string/codeean13"
                     android:enabled="false"
                     android:focusable="false"
                     android:paddingStart="5dp"
@@ -312,7 +313,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code UPC A"
+                    android:text="@string/codeupcastring"
                     android:enabled="false"
                     android:textStyle="bold"
                     android:focusable="false"
@@ -349,7 +350,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code EAN 8"
+                    android:text="@string/codeean8string"
                     android:enabled="false"
                     android:focusable="false"
                     android:paddingStart="5dp"
@@ -378,7 +379,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code UPC E"
+                    android:text="@string/codeupcestring"
                     android:enabled="false"
                     android:textStyle="bold"
                     android:focusable="false"
@@ -415,7 +416,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code PDF 417"
+                    android:text="@string/codepdf417string"
                     android:enabled="false"
                     android:focusable="false"
                     android:paddingStart="5dp"
@@ -445,7 +446,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code RSS EXP"
+                    android:text="@string/coderssexpstring"
                     android:enabled="false"
                     android:textStyle="bold"
                     android:focusable="false"
@@ -482,7 +483,7 @@
                 <MultiAutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code RSS 14"
+                    android:text="@string/coderss14string"
                     android:enabled="false"
                     android:focusable="false"
                     android:paddingStart="5dp"

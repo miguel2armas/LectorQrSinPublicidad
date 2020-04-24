@@ -43,11 +43,7 @@ public class FirstFragment extends Fragment {
     private static final int COD_SELECCIONA = 10;
     private static final int COD_FOTO = 20;
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         solicitaPermisosVersionesSuperiores();
         coderss14 = view.findViewById(R.id.coderss14);
@@ -72,7 +68,7 @@ public class FirstFragment extends Fragment {
                 ClipboardManager clipboard = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("text",  resultado);
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(getContext(), "se a copiado al portapapeles", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), R.string.copystring, Toast.LENGTH_LONG).show();
             }
         });
         coderss14.setOnClickListener(new View.OnClickListener() {
@@ -145,7 +141,7 @@ public class FirstFragment extends Fragment {
     }
     private void getscannercoderss14() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(FirstFragment.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.RSS_14);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         intent.setPrompt("SCANNER CODE RSS 14");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
@@ -155,7 +151,7 @@ public class FirstFragment extends Fragment {
     }
     private void getscannerrssexpanded() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(FirstFragment.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.RSS_EXPANDED);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         intent.setPrompt("SCANNER CODE RSS EXPANDED");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
@@ -175,7 +171,7 @@ public class FirstFragment extends Fragment {
     }
     private void getscannercodeupce() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(FirstFragment.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.UPC_E);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         intent.setPrompt("SCANNER CODE UPC E");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
@@ -185,7 +181,7 @@ public class FirstFragment extends Fragment {
     }
     private void getscannercodeean8() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(FirstFragment.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.EAN_8);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         intent.setPrompt("SCANNER CODE EAN 8");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
@@ -195,7 +191,7 @@ public class FirstFragment extends Fragment {
     }
     private void getscannercodeupca() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(FirstFragment.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.UPC_A);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         intent.setPrompt("SCANNER CODE UPC A");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
@@ -205,7 +201,7 @@ public class FirstFragment extends Fragment {
     }
     private void getscannercodeean13() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(FirstFragment.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.EAN_13);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         intent.setPrompt("SCANNER CODE EAN 13");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
@@ -215,7 +211,7 @@ public class FirstFragment extends Fragment {
     }
     private void getscannercodeitf() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(FirstFragment.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.ITF);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         intent.setPrompt("SCANNER CODE ITF");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
@@ -225,7 +221,7 @@ public class FirstFragment extends Fragment {
     }
     private void getscannercode39() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(FirstFragment.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.CODE_39);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         intent.setPrompt("SCANNER CODE 39");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
@@ -235,7 +231,7 @@ public class FirstFragment extends Fragment {
     }
     private void getscannercode93() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(FirstFragment.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.CODE_93);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES);
         intent.setPrompt("SCANNER CODE 93");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
