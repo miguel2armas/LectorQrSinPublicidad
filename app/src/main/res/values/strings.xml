@@ -2,7 +2,13 @@
     <string name="app_name">All Code Lector</string>
     <string name="action_settings">About</string>
     <!-- Strings used for fragments for navigation -->
+    <string name="permissdes">Deactivated Permissions</string>
+    <string name="messajepermisor">You must accept the permissions for the proper functioning of the App</string>
     <string name="first_fragment_label">First Fragment</string>
+    <string name="acepted">Accept</string>
+    <string name="open">Open</string>
+    <string name="mailadmin">Miguel2.am@hotmail.com</string>
+    <string name="cancelated">Process canceled</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="deletereg">The record was deleted</string>
     <string name="processcancelate">Process canceled</string>

@@ -334,10 +334,10 @@ public class FirstFragment extends Fragment {
     //SI NO ACEPTA LOS PERMISOS SE LE INFORMA AL USUARIO QUE LA APLICACION NO PODRÁ TENER UN BUEN FUNCIONAMIENTO
     private void cargarDialogoRecomendacion() {
         androidx.appcompat.app.AlertDialog.Builder dialogo=new androidx.appcompat.app.AlertDialog.Builder(getContext());
-        dialogo.setTitle("Permisos Desactivados");
-        dialogo.setMessage("Debe aceptar los permisos para el correcto funcionamiento de la App");
+        dialogo.setTitle(R.string.permissdes);
+        dialogo.setMessage(R.string.messajepermisor);
 
-        dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+        dialogo.setPositiveButton(R.string.acepted, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 requestPermissions(new String[]{ACCESS_FINE_LOCATION,ACCESS_COARSE_LOCATION},100);
@@ -351,7 +351,7 @@ public class FirstFragment extends Fragment {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null){
             if(result.getContents()==null){
-                Toast.makeText(getContext(), "Proceso cancelado", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), R.string.cancelated, Toast.LENGTH_LONG).show();
             }else {
                 codeview.setVisibility(View.VISIBLE);
                 btnopenweb.setVisibility(View.VISIBLE);

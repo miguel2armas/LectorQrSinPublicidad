@@ -4,6 +4,11 @@
     <string name="codestring">Código</string>
     <string name="deletereg">Se eliminó el registro</string>
     <string name="processcancelate">Proceso cancelado</string>
+    <string name="messajepermisor">Debe aceptar los permisos para el correcto funcionamiento de la App</string>
+    <string name="permissdes">Permisos Desactivados</string>
+    <string name="acepted">Aceptar</string>
+    <string name="cancelated">Proceso cancelado</string>
+
     <string name="next">Siguiente</string>
     <string name="previous">Anterior</string>
     <string name="historyview">Historial</string>
@@ -21,9 +26,11 @@
     <string name="codeupcastring">Código UPC A</string>
     <string name="codeean8string">Código EAN 8</string>
     <string name="codeupcestring">Código UPC E</string>
+    <string name="open">Abrir</string>
     <string name="codepdf417string">Código PDF 417</string>
     <string name="coderssexpstring">Código RSS EXP</string>
     <string name="coderss14string">Código RSS 14</string>
     <string name="copystring">se a copiado al portapapeles</string>
     <string name="createby">Creado por: Miguel Armas</string>
+    <string name="mailadmin">Miguel2.am@hotmail.com</string>
 </resources>

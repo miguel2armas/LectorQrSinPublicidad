@@ -40,13 +40,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:gravity="center"
-                android:text="Creado por: Miguel armas"/>
+                android:text="@string/createby"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:gravity="center"
-                android:text="Miguel2.am@hotmail.com" />
+                android:text="@string/mailadmin" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
