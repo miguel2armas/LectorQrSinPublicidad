@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">All Qr Lector</string>
+    <string name="app_name">All Code Lector</string>
     <string name="codestring">Código</string>
+    <string name="deletereg">Se eliminó el registro</string>
+    <string name="processcancelate">Proceso cancelado</string>
     <string name="next">Siguiente</string>
     <string name="previous">Anterior</string>
+    <string name="historyview">Historial</string>
     <string name="qrcodestring">Código Qr</string>
     <string name="select">Elige el tipo de código que quieres escanear</string>
     <string name="first_fragment_label">Primer Fragmento</string>

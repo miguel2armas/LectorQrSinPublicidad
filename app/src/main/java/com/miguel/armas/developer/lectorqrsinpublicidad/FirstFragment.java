@@ -1,11 +1,16 @@
 package com.miguel.armas.developer.lectorqrsinpublicidad;
 
+import android.app.SearchManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +22,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
@@ -28,14 +35,16 @@ import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static com.miguel.armas.developer.lectorqrsinpublicidad.PublicMethodAndClass.cerrarteclado;
 
 public class FirstFragment extends Fragment {
     int scanner = 0;
     String resultado;
     LinearLayout codeview;
+    int foundstring = 0;
     TextInputEditText codetext;
     MaterialCardView qrcode,matrixcode, code128, code93, code39, codeitf, codeean13, codeupca, codeean8, codeupce, codepdf417, rssexpanded, coderss14;
-    MaterialButton btncopy;
+    MaterialButton btncopy, btnviewhistory, btnopenweb;
     private static final String CARPETA_PRINCIPAL = "misImagenesApp/";//directorio principal
     private static final String CARPETA_IMAGEN = "imagenes";//carpeta donde se guardan las fotos
     private static final String DIRECTORIO_IMAGEN = CARPETA_PRINCIPAL + CARPETA_IMAGEN;//ruta carpeta de directorios
@@ -48,6 +57,8 @@ public class FirstFragment extends Fragment {
         solicitaPermisosVersionesSuperiores();
         coderss14 = view.findViewById(R.id.coderss14);
         btncopy = view.findViewById(R.id.btncopy);
+        btnopenweb = view.findViewById(R.id.btnopenweb);
+        btnviewhistory = view.findViewById(R.id.btnviewhistory);
         codetext = view.findViewById(R.id.codetext);
         codeview = view.findViewById(R.id.codeview);
         qrcode = view.findViewById(R.id.qrcode);
@@ -62,6 +73,32 @@ public class FirstFragment extends Fragment {
         codeupce = view.findViewById(R.id.codeupce);
         rssexpanded= view.findViewById(R.id.rssexpanded);
         codepdf417 = view.findViewById(R.id.codepdf417);
+        btnopenweb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+                intent.putExtra(SearchManager.QUERY, resultado);
+                getContext().startActivity(intent);
+            }
+        });
+        btnviewhistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HistoryFragment historyFragment = new HistoryFragment();
+                //Bundle bundle = new Bundle();
+                //bundle.putString("id_shop",id_shop);
+                //FragmentManager fm = getActivity().getSupportFragmentManager();
+                //for(int i = 0; i < fm.getBackStackEntryCount(); ++i) { fm.popBackStack(); }
+                //historyFragment.setArguments(bundle);
+                FragmentManager manager = (getActivity().getSupportFragmentManager());
+                FragmentTransaction fragmentTransaction = manager.beginTransaction();
+                fragmentTransaction.replace(R.id.content_main, historyFragment, "historyFragment")
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .addToBackStack(null)
+                        .commit();
+                cerrarteclado(getActivity());
+            }
+        });
         btncopy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -317,8 +354,45 @@ public class FirstFragment extends Fragment {
                 Toast.makeText(getContext(), "Proceso cancelado", Toast.LENGTH_LONG).show();
             }else {
                 codeview.setVisibility(View.VISIBLE);
+                btnopenweb.setVisibility(View.VISIBLE);
                 codetext.setText(result.getContents().toString());
                 this.resultado = result.getContents().toString();
+                String id_history = String.valueOf(System.currentTimeMillis());
+                int time= 0;
+                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getActivity(), "administracion", null, 1);
+                SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+                ContentValues registro = new ContentValues();
+                registro.put("id_history", id_history);
+                registro.put("save_string", resultado);
+                registro.put("date", time);
+                BaseDeDatos.insert("history", null, registro);// este para insertar
+                BaseDeDatos.close();
+                /*AdminSQLiteOpenHelper admin4 = new AdminSQLiteOpenHelper(getContext(), "administracion", null, 1);
+                SQLiteDatabase BaseDeDatos4 = admin4.getReadableDatabase();
+                Cursor fila4=BaseDeDatos4.rawQuery("SELECT save_string FROM history", null);
+                String save_stringend;
+                if (fila4.moveToFirst()) {
+                    save_stringend = fila4.getString(0);
+                    if (save_stringend.equals(resultado) ){
+                        this.foundstring = 1;
+                    }else{
+                        this.foundstring = 0;
+                    }
+                }else{
+                    Toast.makeText(getContext(), "sin datos", Toast.LENGTH_LONG).show();
+                    this.foundstring = 0;
+                }
+                if(foundstring==0) {
+                    AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getActivity(), "administracion", null, 1);
+                    SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+                    ContentValues registro = new ContentValues();
+                    registro.put("id_history", id_history);
+                    registro.put("save_string", resultado);
+                    registro.put("date", time);
+                    BaseDeDatos.insert("history", null, registro);// este para insertar
+                    BaseDeDatos.close();
+                }
+                fila4.close();*/
             }
         }
     }

@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">All Qr Lector</string>
+    <string name="app_name">All Code Lector</string>
     <string name="action_settings">About</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="deletereg">The record was deleted</string>
+    <string name="processcancelate">Process canceled</string>
     <string name="next">Next</string>
+    <string name="historyview">History</string>
     <string name="previous">Previous</string>
     <string name="select">Choose the type of code you want to scan</string>
     <string name="codestring">Codigo</string>
