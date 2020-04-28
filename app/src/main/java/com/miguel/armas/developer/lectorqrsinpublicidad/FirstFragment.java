@@ -315,18 +315,14 @@ public class FirstFragment extends Fragment {
     private boolean solicitaPermisosVersionesSuperiores() {
         //validamos si los permisos ya fueron aceptados
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if((getContext().checkSelfPermission(ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED)&&getContext()
-                    .checkSelfPermission(ACCESS_COARSE_LOCATION)== PackageManager.PERMISSION_GRANTED&&
-                    (getContext().checkSelfPermission(WRITE_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED)
-                    &&getContext().checkSelfPermission(CAMERA)==PackageManager.PERMISSION_GRANTED){
+            if(getContext().checkSelfPermission(CAMERA)==PackageManager.PERMISSION_GRANTED){
                 return true;
             }
         }
-        if ((shouldShowRequestPermissionRationale(ACCESS_FINE_LOCATION)||(shouldShowRequestPermissionRationale(ACCESS_COARSE_LOCATION))||
-                (shouldShowRequestPermissionRationale(WRITE_EXTERNAL_STORAGE)||(shouldShowRequestPermissionRationale(CAMERA))))){
+        if (shouldShowRequestPermissionRationale(CAMERA)){
             cargarDialogoRecomendacion();
         }else{
-            requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION,WRITE_EXTERNAL_STORAGE, CAMERA}, MIS_PERMISOS);
+            requestPermissions(new String[]{CAMERA}, MIS_PERMISOS);
         }
 
         return false;//implementamos el que procesa el evento dependiendo de lo que se defina aqui
