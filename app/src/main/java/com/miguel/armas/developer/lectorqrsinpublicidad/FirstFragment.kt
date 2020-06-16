@@ -18,13 +18,10 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.zxing.integration.android.IntentIntegrator
-import com.miguel.armas.developer.lectorqrsinpublicidad.FirstFragment
 import com.miguel.armas.developer.lectorqrsinpublicidad.PublicMethodAndClass.cerrarteclado
 
 class FirstFragment : Fragment() {
-    var scanner = 0
     var resultado: String? = null
-    var foundstring = 0
     lateinit var btnopenweb: MaterialButton
     lateinit var codetext: TextInputEditText
     lateinit var codeview: LinearLayout
@@ -277,41 +274,10 @@ class FirstFragment : Fragment() {
                 registro.put("date", time)
                 BaseDeDatos.insert("history", null, registro) // este para insertar
                 BaseDeDatos.close()
-                /*AdminSQLiteOpenHelper admin4 = new AdminSQLiteOpenHelper(getContext(), "administracion", null, 1);
-                SQLiteDatabase BaseDeDatos4 = admin4.getReadableDatabase();
-                Cursor fila4=BaseDeDatos4.rawQuery("SELECT save_string FROM history", null);
-                String save_stringend;
-                if (fila4.moveToFirst()) {
-                    save_stringend = fila4.getString(0);
-                    if (save_stringend.equals(resultado) ){
-                        this.foundstring = 1;
-                    }else{
-                        this.foundstring = 0;
-                    }
-                }else{
-                    Toast.makeText(getContext(), "sin datos", Toast.LENGTH_LONG).show();
-                    this.foundstring = 0;
-                }
-                if(foundstring==0) {
-                    AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getActivity(), "administracion", null, 1);
-                    SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-                    ContentValues registro = new ContentValues();
-                    registro.put("id_history", id_history);
-                    registro.put("save_string", resultado);
-                    registro.put("date", time);
-                    BaseDeDatos.insert("history", null, registro);// este para insertar
-                    BaseDeDatos.close();
-                }
-                fila4.close();*/
             }
         }
     }
 
     companion object {
-        private const val CARPETA_PRINCIPAL = "misImagenesApp/" //directorio principal
-        private const val CARPETA_IMAGEN = "imagenes" //carpeta donde se guardan las fotos
-        private const val DIRECTORIO_IMAGEN = CARPETA_PRINCIPAL + CARPETA_IMAGEN //ruta carpeta de directorios
-        private const val COD_SELECCIONA = 10
-        private const val COD_FOTO = 20
     }
 }
