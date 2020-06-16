@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">All Code Lector</string>
+    <string name="app_name">All Code Reader</string>
     <string name="codestring">Código</string>
     <string name="deletereg">Se eliminó el registro</string>
     <string name="processcancelate">Proceso cancelado</string>
@@ -30,7 +30,7 @@
     <string name="codepdf417string">Código PDF 417</string>
     <string name="coderssexpstring">Código RSS EXP</string>
     <string name="coderss14string">Código RSS 14</string>
-    <string name="copystring">se a copiado al portapapeles</string>
+    <string name="copystring">se ha copiado al portapapeles</string>
     <string name="createby">Creado por: Miguel Armas</string>
     <string name="mailadmin">Miguel2.am@hotmail.com</string>
 </resources>

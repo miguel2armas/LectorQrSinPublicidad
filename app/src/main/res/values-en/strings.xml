@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">All Code Lector</string>
+    <string name="app_name">All Code Reader</string>
     <string name="codestring">Code</string>
     <string name="next">Next</string>
     <string name="messajepermisor">You must accept the permissions for the proper functioning of the App</string>

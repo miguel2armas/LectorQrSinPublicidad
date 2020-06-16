@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">All Code Lector</string>
+    <string name="app_name">All Code Reader</string>
     <string name="action_settings">About</string>
     <!-- Strings used for fragments for navigation -->
     <string name="permissdes">Deactivated Permissions</string>
